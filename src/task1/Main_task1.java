@@ -10,7 +10,6 @@ public class Main_task1 {
     private static final boolean EXTERNAL_END = true;       // Флаг остановки игрушки из главного потока
     private static final byte CYCLES = 4;                   // Количество включений игрушки игроком
     private static final short SWITCH_DELAY = 1_200;        // Время между включениями
-    private static final short TURNOFF_TIME = 3;            // Задержка на выключение игрушки (для порядка вывода в консоль)
     private static final String GAMER_COLOR = "\u001b[34m"; // Цвет печати в консоль действий игрока
     private static final String TOY_COLOR = "\u001b[31m";   // Цвет печати в консоль действий игрушки
     private static final String MAIN_COLOR = "\u001b[0m";   // Цвет печати в консоль действий главного потока
@@ -39,11 +38,6 @@ public class Main_task1 {
         Thread t2 = new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {
                 if (status) {
-                    try {
-                        Thread.sleep(TURNOFF_TIME);
-                    } catch (InterruptedException e) {
-                        System.out.println(TOY_COLOR + Thread.currentThread().getName() + " прерван при ожидании");
-                    }
                     System.out.println(TOY_COLOR + Thread.currentThread().getName() + " выключает тумблер");
                     status = !status;
                 }
