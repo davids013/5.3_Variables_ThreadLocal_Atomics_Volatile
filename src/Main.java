@@ -1,6 +1,3 @@
-import task1.Main_task1;
-import task2.Main_task2;
-
 import java.util.concurrent.ExecutionException;
 
 public class Main {
@@ -11,7 +8,8 @@ public class Main {
                 \tЛекция 3. Переменные многопоточное программы. ThreadLocal, Atomics, Volatile
                 """);
 
-        Main_task1.main(null);
-        Main_task2.main(null);
+        task1.Main_task1.main(null);
+//        task2.Main_task2.main(null);
+        task2v2.Main_task2v2.main(null);
     }
 }
